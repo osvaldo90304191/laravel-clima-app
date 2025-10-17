@@ -1,3 +1,27 @@
+# ☁️ Prueba Técnica: API de Clima con Laravel, Comando Artisan y MongoDB
+
+Este proyecto es una aplicación Laravel que cumple con los requisitos de la prueba técnica para obtener datos de clima de OpenWeatherMap, procesarlos y almacenarlos en una base de datos MongoDB, utilizando un Comando Artisan como mecanismo central de la lógica.
+
+## 📋 Requisitos Implementados
+
+1.  **Ruta API Pública:** Expone un endpoint HTTP (`/api/weather?city={nombre_ciudad}`) para obtener el clima.
+2.  **Uso de Comando Artisan:** La lógica principal (llamada a la API y guardado en DB) está encapsulada en el comando `weather:get`, que es invocado desde el Controlador HTTP.
+3.  **Almacenamiento en MongoDB:** Los resultados se almacenan en la colección `weather_results` de MongoDB, utilizando el paquete `jenssegers/laravel-mongodb`.
+4.  **Deduplicación:** El comando verifica si ya existe una consulta reciente para la ciudad en los últimos 30 minutos antes de realizar una nueva llamada a la API de OpenWeatherMap.
+5.  **Variables de Entorno:** La clave de la API de OpenWeatherMap y la configuración de la conexión a MongoDB se manejan mediante el archivo `.env`.
+
+---
+
+## 🚀 Instalación y Ejecución
+
+Sigue estos pasos para levantar el proyecto:
+
+### 1. Clonar el Repositorio
+
+```bash
+git clone [https://github.com/osvaldo90304191/laravel-clima-app.git](https://github.com/osvaldo90304191/laravel-clima-app.git)
+cd laravel-clima-app
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -6,6 +30,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+
+
 
 ## About Laravel
 
